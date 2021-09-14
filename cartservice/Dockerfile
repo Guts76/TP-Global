@@ -17,5 +17,5 @@ FROM mcr.microsoft.com/dotnet/core/runtime:3.1
 WORKDIR /app
 
 COPY --from=build /out .
-
+ENV ASPNETCORE_URLS http://*:7070
 CMD ["dotnet", "cartservice.dll"]

@@ -1,0 +1,49 @@
+#
+version: "1"
+services:
+    adservice:
+        build: ./adservice/.
+        ports: 
+          # premier port a ouvrir et le deuxime port que j'expose
+            - "9555:9555"
+    cartservice:
+        build: ./cartservice/.
+        ports: 
+          - "7070:7070"
+    checkoutservice:
+        build: ./checkoutservice/.
+        ports: 
+          - "5050:5050"
+    currencyservice:
+        build: ./currencyservice/.
+        ports: 
+          - "7000:7000"
+    emailservice:
+        build: ./emailservice/.
+        ports: 
+          - "8080:8080"
+    frontend:
+        build: ./frontend/.
+        ports: 
+          - "8081:8080"
+    loadgenerator:
+        build: ./loadgenerator/.
+        ports: 
+          - "80:80"
+    paymentservice:
+        build: ./paymentservice/.
+        ports: 
+          - "4000:4000"
+    productcatalogservice:
+        build: ./productcatalogservice/.
+        ports: 
+          - "3550:3550"
+    recommendationservice:
+        build: ./recommendationservice/.
+        ports: 
+          - "8082:8080"
+    shippingservice:
+        build: ./shippingservice/.
+        ports: 
+          - "50051:50051"
+          
