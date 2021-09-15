@@ -1,0 +1,105 @@
+version: "3"
+
+services:
+
+    adservice:
+        build: ./adservice/.
+        ports:
+            - "9555:9555"
+        # depends_on:
+        #     - redis
+        networks:
+            - front
+
+    cartservice:
+        build: ./cartservice/src/
+        ports:
+            - "$ASPNETCORE_URLS"
+        # depends_on:
+        #     - db
+        networks:
+            - back
+
+    checkoutservice:
+        build: ./checkoutservice/.
+        # depends_on:
+        #     - db
+        #     - redis
+        networks:
+            - front
+            - back
+
+
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+#     db:
+#         image: postgres:9.4
+#         networks:
+#             - back
+#         environment:
+#             POSTGRES_USER: "postgres"
+#             POSTGRES_PASSWORD: "postgres"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     redis:
+#         image: redis:5.0-alpine3.10
+#         networks:
+#             - front
+# networks:
+#     front:
+#     back:
