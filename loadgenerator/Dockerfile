@@ -37,3 +37,5 @@ COPY locustfile.py .
 ENV GEVENT_SUPPORT=True
 
 ENTRYPOINT locust --host="http://${FRONTEND_ADDR}" --headless -u "${USERS:-10}" 2>&1
+
+CMD wget --server-response http://{FRONTEND_ADDR} 2>&1
